@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Youtube Remote</string>
+    <string name="start_video">Start Video</string>
+    <string name="next">Continue</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="volumeplus">Volume+</string>
+    <string name="volumeminus">Volume-</string>
+    <string name="fullscreen">Fullscreen</string>
+    <string name="forward_10_secs">Forward 10 secs</string>
+    <string name="back_10_secs">Back 10 secs</string>
+    <string name="mute">Mute</string>
+    <string name="next_vid">Next</string>
+    <string name="previous_vid">Previous</string>
+    <string name="enter_your_pc_s_ip_address">Enter your PC\'s IP address</string>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ControllerActivity">
+
+    <EditText
+        android:id="@+id/txt_URL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:inputType="textUri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_starvid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="startVideo"
+        android:text="@string/start_video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_URL" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:scaleY="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_starvid">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:onClick="resumeOrPause"
+                android:text="@string/play_pause"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btn_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:onClick="fullscreen"
+                android:text="@string/fullscreen"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btn_mute"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="mute"
+                android:text="@string/mute"
+                android:textSize="10sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_volplus"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:onClick="volPlus"
+                android:text="@string/volumeplus"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btn_forward10"
+                android:layout_width="106dp"
+                android:layout_height="120dp"
+                android:onClick="forward10"
+                android:text="@string/forward_10_secs"
+                android:textSize="10sp"
+                android:translationY="-6dp" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="106dp"
+                android:layout_height="120dp"
+                android:onClick="next"
+                android:text="@string/next_vid"
+                android:textSize="10sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_volminus"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:onClick="volMinus"
+                android:text="@string/volumeminus"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btn_back10"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:onClick="back10"
+                android:text="@string/back_10_secs"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:onClick="prev"
+                android:text="@string/previous_vid"
+                android:textSize="10sp" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
