@@ -1,13 +1,12 @@
 package com.ignissen.youtube_remote
 
-import android.app.VoiceInteractor
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.VolleyError
@@ -42,19 +41,23 @@ class ControllerActivity : AppCompatActivity() {
         Toast.makeText(this, "Using IP Address: $IPAddress", Toast.LENGTH_SHORT).show()
     }
 
-    fun startVideo(view : View){
+    fun startVideo(view: View){
         val vidURL = findViewById<EditText>(R.id.txt_URL).text.toString()
+
+        val vidURLTextView = findViewById<EditText>(R.id.txt_URL)
+        val imm: InputMethodManager = this.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
 
         val queue = Volley.newRequestQueue(this)
         val postData = JSONObject()
         try{
             postData.put("url", vidURL)
-        }catch (e : JSONException) {
+        }catch (e: JSONException) {
             e.printStackTrace()
         }
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.POST, STARTVID_URL, postData, Response.Listener {
-            fun onResponse(respone : JSONObject) {
+            fun onResponse(respone: JSONObject) {
                 println(respone)
             }
         }, Response.ErrorListener {
@@ -65,17 +68,17 @@ class ControllerActivity : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
 
-    fun sendActionToServer(action : String){
+    fun sendActionToServer(action: String){
         val queue = Volley.newRequestQueue(this)
         val postData = JSONObject()
         try{
             postData.put("action", action)
-        }catch (e : JSONException) {
+        }catch (e: JSONException) {
             e.printStackTrace()
         }
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.POST, ACTION_URL, postData, Response.Listener {
-            fun onResponse(respone : JSONObject) {
+            fun onResponse(respone: JSONObject) {
                 println(respone)
             }
         }, Response.ErrorListener {
